@@ -1,25 +1,43 @@
 services:
+  postgres:
+    image: postgres:17
+    container_name: roy-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: roydb
+      POSTGRES_USER: royuser
+      POSTGRES_PASSWORD: roypassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
   backend:
     build:
       context: ./backend
     container_name: roy-backend
     restart: unless-stopped
+    depends_on:
+      - postgres
     ports:
       - "4000:4000"
-    volumes:
-      - backend_data:/app/data
     environment:
-      - NODE_ENV=production
+      PORT: 4000
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: roydb
+      DB_USER: royuser
+      DB_PASSWORD: roypassword
 
   frontend:
     build:
       context: ./frontend
     container_name: roy-frontend
-    restart: unless-stopped
+    restart: me-stopped
     depends_on:
       - backend
     ports:
       - "8080:80"
 
 volumes:
-  backend_data:
+  postgres_data:
