@@ -1,19 +1,19 @@
 /* ============================================================
-   API CLIENT — talks to the Sarab backend (see /backend)
+   API CLIENT — talks to the Roy backend (see /backend)
    Set API_BASE to wherever the backend is running.
    ============================================================ */
-var API_BASE = window.SARAB_API_BASE || 'http://localhost:4000/api';
+var API_BASE = window.Roy_API_BASE || 'http://localhost:4000/api';
 
 var Auth = {
-  getToken: function() { return localStorage.getItem('sarab_token'); },
-  setToken: function(t) { localStorage.setItem('sarab_token', t); },
-  clearToken: function() { localStorage.removeItem('sarab_token'); },
+  getToken: function() { return localStorage.getItem('roy_token'); },
+  setToken: function(t) { localStorage.setItem('roy_token', t); },
+  clearToken: function() { localStorage.removeItem('roy_token'); },
   getUser: function() {
-    try { return JSON.parse(localStorage.getItem('sarab_user') || 'null'); }
+    try { return JSON.parse(localStorage.getItem('roy_user') || 'null'); }
     catch (e) { return null; }
   },
-  setUser: function(u) { localStorage.setItem('sarab_user', JSON.stringify(u)); },
-  clearUser: function() { localStorage.removeItem('sarab_user'); },
+  setUser: function(u) { localStorage.setItem('roy_user', JSON.stringify(u)); },
+  clearUser: function() { localStorage.removeItem('roy_user'); },
   isLoggedIn: function() { return !!this.getToken(); }
 };
 

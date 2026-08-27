@@ -1,0 +1,25 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: roy-backend
+    restart: unless-stopped
+    ports:
+      - "4000:4000"
+    volumes:
+      - backend_data:/app/data
+    environment:
+      - NODE_ENV=production
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: roy-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "8080:80"
+
+volumes:
+  backend_data:

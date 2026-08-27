@@ -1,6 +1,6 @@
-# Sarab Backend
+# Roy Backend
 
-Express API for the Sarab restaurant template. Implements auth, products,
+Express API for the Roy restaurant template. Implements auth, products,
 cart, and orders per the architecture doc's schema and route design.
 
 **Database:** SQLite (via `better-sqlite3`) so it runs with zero setup —
@@ -13,7 +13,7 @@ To move to real MySQL for production: swap `db/index.js` to use `mysql2`
 
 ```bash
 npm install
-node db/seed.js   # creates sarab.sqlite3 and seeds categories/products
+node db/seed.js   # creates roy.sqlite3 and seeds categories/products
 npm start         # listens on http://localhost:4000
 ```
 

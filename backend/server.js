@@ -26,4 +26,4 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Internal server error' });
 });
 
-app.listen(PORT, () => console.log(`Sarab backend listening on http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Roy backend listening on http://localhost:${PORT}`));

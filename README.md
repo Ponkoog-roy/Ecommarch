@@ -1,12 +1,12 @@
-# Sarab — Full-Stack Food Ordering
+# Roy — Full-Stack Food Ordering
 
-The Sarab HTML/Bootstrap template wired up to a real backend: login/register,
+The Roy HTML/Bootstrap template wired up to a real backend: login/register,
 persistent cart, and checkout, per the architecture doc.
 
 ```
 project/
   backend/    Express API + SQLite (schema mirrors the MySQL design doc)
-  frontend/   The original Sarab template, with:
+  frontend/   The original Roy template, with:
                 - js/api.js   new — API client (auth/cart/orders)
                 - js/main.js  updated — menu "Add to Cart", login modal, cart drawer
                 - index.html  updated — nav login/cart buttons, auth modal, cart drawer markup
@@ -29,7 +29,7 @@ python3 -m http.server 8080   # http://localhost:8080
 ```
 
 Open http://localhost:8080. The frontend calls the API at
-`http://localhost:4000/api` by default — set `window.SARAB_API_BASE` before
+`http://localhost:4000/api` by default — set `window.Roy_API_BASE` before
 `js/api.js` loads (e.g. in `index.html`) to point elsewhere.
 
 ## What's wired up
