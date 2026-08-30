@@ -2,7 +2,7 @@
    API CLIENT — talks to the Roy backend (see /backend)
    Set API_BASE to wherever the backend is running.
    ============================================================ */
-var API_BASE = window.Roy_API_BASE || 'http://localhost:4000/api';
+var API_BASE = window.Roy_API_BASE || 'https://ec-9f8dd72b3e3a493e965d4a15c6c2b111.ecs.ap-southeast-2.on.aws/api';
 
 var Auth = {
   getToken: function() { return localStorage.getItem('roy_token'); },

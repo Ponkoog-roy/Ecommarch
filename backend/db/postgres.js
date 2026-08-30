@@ -15,6 +15,11 @@ const pool = new Pool({
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
 
+  // Required for Amazon RDS / Aurora PostgreSQL
+  ssl: {
+    rejectUnauthorized: false
+  },
+
   max: 20,
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 5000
