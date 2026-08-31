@@ -8,7 +8,7 @@ Database: PostgreSQL (Amazon RDS)
 Containerization: Docker
 Orchestration: Amazon ECS Fargate
 Load Balancing: Application Load Balancer (ALB)
-Architecture
+Architecture   
                       Internet
                           |
           +---------------------------------+
