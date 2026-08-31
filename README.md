@@ -8,6 +8,7 @@ Database: PostgreSQL (Amazon RDS)
 Containerization: Docker
 Orchestration: Amazon ECS Fargate
 Load Balancing: Application Load Balancer (ALB)
+version 1 or 2 for EKS and 2.0 + are for AKS or k8s
 Architecture
                       Internet
                           |
