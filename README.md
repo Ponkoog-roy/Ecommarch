@@ -1,7 +1,7 @@
 ROY Food Ordering Application   
 
 A full-stack food ordering platform built with:
-
+  
 Frontend: HTML5, Bootstrap, JavaScript, Nginx
 Backend: Node.js, Express.js
 Database: PostgreSQL (Amazon RDS)
