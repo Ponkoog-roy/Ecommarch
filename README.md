@@ -1,5 +1,3 @@
-Here's a production-quality README.md you can reuse for this project and future ECS deployments.
-
 ROY Food Ordering Application
 
 A full-stack food ordering platform built with:
