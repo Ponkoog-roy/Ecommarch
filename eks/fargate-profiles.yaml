@@ -1,0 +1,19 @@
+eksctl create fargateprofile \
+  --cluster ecommarch \
+  --name roy-profile \
+  --namespace roy-dev \
+  --region ap-southeast-2
+
+---
+eksctl create fargateprofile \
+  --cluster ecommarch \
+  --name argocd-profile \
+  --namespace argocd \
+  --region ap-southeast-2
+
+---
+eksctl create fargateprofile \
+  --cluster ecommarch \
+  --name kube-system-profile \
+  --namespace kube-system \
+  --region ap-southeast-2

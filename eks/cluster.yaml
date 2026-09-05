@@ -1,0 +1,26 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: ecommarch
+  region: ap-southeast-2
+  version: "1.36"
+
+iam:
+  withOIDC: true
+
+addons:
+  - name: coredns
+  - name: kube-proxy
+  - name: vpc-cni
+  - name: metrics-server
+
+vpc:
+  clusterEndpoints:
+    publicAccess: true
+    privateAccess: true
+
+cloudWatch:
+  clusterLogging:
+    enableTypes:
+      - "*"
