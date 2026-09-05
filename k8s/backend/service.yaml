@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-svc
+  namespace: roy-dev
+  labels:
+    app: backend
+spec:
+  # "ip" target-type on the Ingress requires ClusterIP services, which
+  # also happens to be the cheapest option (no extra ELB per service).
+  type: ClusterIP
+  selector:
+    app: backend
+  ports:
+    - port: 80
+      targetPort: 4000
+      protocol: TCP

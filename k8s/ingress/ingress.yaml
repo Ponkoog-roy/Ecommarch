@@ -1,0 +1,35 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: roy-ingress
+  namespace: roy-dev
+  annotations:
+    kubernetes.io/ingress.class: alb
+    # Required on Fargate: pods have no EC2 instance ID, so the ALB must
+    # target pod IPs directly instead of node instance IDs.
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    alb.ingress.kubernetes.io/healthcheck-path: /api/health
+    # Only one ALB gets created for this whole namespace's routes because
+    # everything lives under a single Ingress resource below.
+spec:
+  rules:
+    - http:
+        paths:
+          # More specific path first: /api/* -> backend
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: backend-svc
+                port:
+                  number: 80
+          # Everything else -> frontend (static site)
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend-svc
+                port:
+                  number: 80
