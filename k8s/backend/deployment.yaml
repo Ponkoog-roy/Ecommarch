@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend
-  namespace: roy-food-ordering
+  namespace: roy-dev
   labels:
     app: backend
 spec:
@@ -19,7 +19,7 @@ spec:
         - name: backend
           # Push your image to ECR and swap this in, e.g.
           # <account-id>.dkr.ecr.<region>.amazonaws.com/roy-backend:latest
-          image: ponkoog/ecommarch-backend:v1
+          image: ponkoog/ecommarch-backend:v2
           ports:
             - containerPort: 4000
           envFrom:

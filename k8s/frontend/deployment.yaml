@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
-  namespace: roy-food-ordering
+  namespace: roy-dev
   labels:
     app: frontend
 spec:
@@ -19,7 +19,7 @@ spec:
         - name: frontend
           # Push your image to ECR and swap this in, e.g.
           # <account-id>.dkr.ecr.<region>.amazonaws.com/roy-frontend:latest
-          image: ponkoog/ecommarch-frontend:v1
+          image: ponkoog/ecommarch-frontend:v3
           ports:
             - containerPort: 80
           volumeMounts:

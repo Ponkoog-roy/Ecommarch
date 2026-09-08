@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: frontend-nginx-conf
-  namespace: roy-food-ordering
+  namespace: roy-dev
 data:
   default.conf: |
     server {
