@@ -24,3 +24,19 @@ cloudWatch:
   clusterLogging:
     enableTypes:
       - "*"
+
+autoModeConfig:
+  enabled: false
+
+fargateProfiles:
+  - name: fp-default
+    selectors:
+      - namespace: default
+
+  - name: fp-kube-system
+    selectors:
+      - namespace: kube-system
+
+  - name: fp-roy-dev
+    selectors:
+      - namespace: roy-dev

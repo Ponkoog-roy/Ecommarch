@@ -6,7 +6,7 @@ metadata:
   namespace: roy-dev
 
 data:
-  DB_HOST: "database-1.czmyicasgaga.ap-southeast-2.rds.amazonaws.com"
+  DB_HOST: "roydb.czmyicasgaga.ap-southeast-2.rds.amazonaws.com"
   DB_PORT: "5432"
   DB_NAME: "roydb"
   DB_USER: "royuser"
