@@ -1,6 +1,4 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: roy-food-ordering
-  labels:
-    app.kubernetes.io/part-of: roy-food-ordering
+  name: roy-dev

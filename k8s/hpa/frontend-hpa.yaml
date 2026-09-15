@@ -11,7 +11,7 @@ spec:
   # Keep max low on a learning cluster — each extra Fargate pod is
   # billed by vCPU/memory-second, so scaling out isn't free.
   minReplicas: 1
-  maxReplicas: 3
+  maxReplicas: 2
   metrics:
     - type: Resource
       resource:
